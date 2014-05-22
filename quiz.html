@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <title>jQuery Quiz!</title>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <style>
+	table {
+		display: inline;
+	}
+        #droppable, #droppable2, #droppable3, #droppable4 {
+		width: 150px; 
+		height: 150px; 
+		padding: 0.5em; 
+		float: right; 
+		margin: 10px; 
+	}
+        #draggable, #draggable2, #draggable3, #draggable4 { 
+		width: 100px; 
+		height: 100px; 
+		padding: 0.5em; 
+		float: left; 
+		margin: 10px 10px 10px 0; 
+	}
+        </style>
+        <script>
+        $(function() {
+                $( "#draggable, #draggable2, #draggable3, #draggable4" ).draggable({ 
+			revert: true,
+			revert: "invalid",
+			cursor: "move",
+			cursorAt: { top: 56, left: 56 }
+		});
+                $( "#droppable" ).droppable({
+                        accept: "#draggable",
+                        drop: function( event, ui ) {
+                        $( this )
+                                .addClass( "ui-state-highlight" )
+                                .find( "p" )
+                                .html( "Correct!" );
+                        }
+                });
+                $( "#droppable2" ).droppable({
+                        accept: "#draggable2",
+                        drop: function( event, ui ) {
+                        $( this )
+                                .addClass( "ui-state-highlight" )
+                                .find( "p" )
+                                .html( "Correct!" );
+                        }
+                });
+                $( "#droppable3" ).droppable({
+                        accept: "#draggable3",
+                        drop: function( event, ui ) {
+                        $( this )
+                                .addClass( "ui-state-highlight" )
+                                .find( "p" )
+                                .html( "Correct!" );
+                        }
+                });
+		$( "#droppable4" ).droppable({
+                        accept: "#draggable4",
+                        drop: function( event, ui ) {
+                        $( this )
+                                .addClass( "ui-state-highlight" )
+                                .find( "p" )
+                                .html( "Correct!" );
+                        }
+                });
+        });
+        </script>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>
+        			<div id="draggable" class="ui-widget-content">
+                			<p>Question1</p>
+        			</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+        			<div id="draggable2" class="ui-widget-content">
+                			<p>Question2</p>
+        			</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+        			<div id="draggable3" class="ui-widget-content">
+                			<p>Question3</p>
+        			</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+        			<div id="draggable4" class="ui-widget-content">
+                			<p>Question4</p>
+        			</div>
+			</td>
+		</tr>
+	</table>
+	<table>
+		<tr>
+			<td>
+        			<div id="droppable" class="ui-widget-header">
+                			<p>Answer1</p>
+        			</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+        			<div id="droppable2" class="ui-widget-header">
+                			<p>Answer2</p>
+        			</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+        			<div id="droppable3" class="ui-widget-header">
+                			<p>Answer3</p>
+        			</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+        			<div id="droppable4" class="ui-widget-header">
+                			<p>Answer4</p>
+        			</div>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
